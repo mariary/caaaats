@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function Inline() {
+            let btn = document.getElementById("btn-1");
+            btn.classList.toggle("btn_active");
+
+            let list = document.getElementById("list");
+            list.classList.toggle("list_block");
+
+            let width = document.getElementById("container");
+            width.classList.toggle("container");
+
+            let buttons = document.getElementById("switch");
+            buttons.classList.toggle("hidden");
+
+            let item = document.body.querySelectorAll('.item');
+            let description = document.body.querySelectorAll('.description');
+            let about = document.body.querySelectorAll('.about');
+
+            for (let i = 0; i < item.length; i++) {
+                item[i].classList.toggle('item_block');
+                description[i].classList.toggle('hidden');
+                about[i].classList.toggle('hidden');
+            }
+            ;
+
+            for (let i = 0; i < item.length; i++) {
+                item[i].style.display = "inline-block";
+                item[i].classList.remove('item_block_active');
+            }
+            ;
+        };
+
+        function showSlides(n) {
+            let item = document.body.querySelectorAll('.item');
+            let close = document.getElementById('btn-2');
+            let about = document.body.querySelectorAll('.about');
+            let dots = document.getElementsByClassName("slider-dots_item");
+            for (let i = 0; i < item.length; i++) {
+                item[i].classList.remove('item_block_active');
+            }
+            ;
+            for (let i = 0; i < item.length; i++) {
+                dots[i].classList.remove('active');
+            }
+            ;
+            about[n - 1].classList.toggle('hidden');
+            about[n - 1].classList.toggle('bottom');
+            dots[n - 1].classList.add('active');
+            item[n - 1].classList.add('item_block_active');
+            close.classList.toggle('hidden')
+        };
+        function Close() {
+            let item = document.body.querySelectorAll('.item');
+            let close = document.getElementById('btn-2');
+            let about = document.body.querySelectorAll('.about');
+            for (let i = 0; i < item.length; i++) {
+                item[i].classList.remove('item_block_active');
+            }
+            close.classList.toggle('hidden');
+            for (let i = 0; i < item.length; i++) {
+                about[i].classList.remove('bottom');
+                about[i].classList.add('hidden');
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="header">
+    <img src="content/logo.jpg">
+</div>
+
+<div class="content">
+    <div class="container">
+        <button id="btn-1" class="btn" onclick="Inline()">
+            <div id="lines"></div>
+        </button>
+    </div>
+    <div class="container" id="container">
+        <div class="list" id="list">
+            <div class="item" id="item">
+                <div class="img"><img src="content/1.jpg" alt=""></div>
+                <div class="about">
+                    <div class="name">Борис</div>
+                    <div class="age">Возраст: 3 года</div>
+                    <div class="type">Порода: нет</div>
+                    <div class="disease">Болезни: Глухота</div>
+                    <div class="status">Статус: Ищет хозяина</div>
+                    <div class="description hidden">Самый лучший в мире</div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="img"><img src="content/2.jpg" alt=""></div>
+                <div class="about">
+                    <div class="name">Мурзик</div>
+                    <div class="age">Возраст: 2 года</div>
+                    <div class="type">Порода: нет</div>
+                    <div class="disease">Болезни: нет</div>
+                    <div class="status">Статус: Ищет хозяина</div>
+                    <div class="description hidden">Самый красивый общительный</div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="img"><img src="content/3.jpg" alt=""></div>
+                <div class="about">
+                    <div class="name">Сеня</div>
+                    <div class="age">Возраст: 3 месяца</div>
+                    <div class="type">Порода: нет</div>
+                    <div class="disease">Болезни: нет</div>
+                    <div class="status">Статус: Ищет хозяина</div>
+                    <div class="description hidden">Такооой умный</div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="img"><img src="content/4.jpg" alt=""></div>
+                <div class="about">
+                    <div class="name">Варя</div>
+                    <div class="age">Возраст: 1 год</div>
+                    <div class="type">Порода: нет</div>
+                    <div class="disease">Болезни: нет</div>
+                    <div class="status">Статус: Ищет хозяина</div>
+                    <div class="description hidden">Этот кот все на свете знает</div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="img"><img src="content/5.jpg" alt=""></div>
+                <div class="about">
+                    <div class="name">Лео</div>
+                    <div class="age">Возраст: 7 месяцев</div>
+                    <div class="type">Порода: нет</div>
+                    <div class="disease">Болезни: нет</div>
+                    <div class="status">Статус: Ищет хозяина</div>
+                    <div class="description hidden">Кот поможет справиться с депрессией</div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="img"><img src="content/6.jpg" alt=""></div>
+                <div class="about">
+                    <div class="name">Ник</div>
+                    <div class="age">Возраст: 3 года</div>
+                    <div class="type">Порода: нет</div>
+                    <div class="disease">Болезни: Глухота</div>
+                    <div class="status">Статус: Ищет хозяина</div>
+                    <div class="description hidden">Просто котик хороший милый без комментариев</div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="img"><img src="content/7.jpg" alt=""></div>
+                <div class="about">
+                    <div class="name">Демик</div>
+                    <div class="age">Возраст: 2 года</div>
+                    <div class="type">Порода: нет</div>
+                    <div class="disease">Болезни: нет</div>
+                    <div class="status">Статус: Ищет хозяина</div>
+                    <div class="description hidden">пупсик</div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="img"><img src="content/8.jpg" alt=""></div>
+                <div class="about">
+                    <div class="name">Иван</div>
+                    <div class="age">Возраст: 8 месяцев</div>
+                    <div class="type">Порода: нет</div>
+                    <div class="disease">Болезни: Грусть</div>
+                    <div class="status">Статус: Ищет хозяина</div>
+                    <div class="description hidden">и еще один пупсик для количества</div>
+                </div>
+            </div>
+        </div>
+        <div class="switch hidden" id="switch">
+            <span class="slider-dots_item" onclick="showSlides(1)"></span>
+            <span class="slider-dots_item" onclick="showSlides(2)"></span>
+            <span class="slider-dots_item" onclick="showSlides(3)"></span>
+            <span class="slider-dots_item" onclick="showSlides(4)"></span>
+            <span class="slider-dots_item" onclick="showSlides(5)"></span>
+            <span class="slider-dots_item" onclick="showSlides(6)"></span>
+            <span class="slider-dots_item" onclick="showSlides(7)"></span>
+            <span class="slider-dots_item" onclick="showSlides(8)"></span>
+        </div>
+        <button id="btn-2" class="btn-close hidden" onclick="Close()">
+            <img src="content/close.svg">
+        </button>
+
+    </div>
+</div>
+<div class="container">
+    <div class="footer">
+        <p>Напишите нам:</p>
+        <div class="mails">
+            <a href="" class="mail">hellohowareyou@mail.ru</a>
+            <a href="" class="mail">hehelol@gmail.com</a>
+        </div>
+        <div class="company">
+            2020 OOO "<a href="">Бабушкины котятки</a>"
+        </div>
+    </div>
+</div>
+</body>
+</html>
